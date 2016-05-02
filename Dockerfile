@@ -1,4 +1,5 @@
-FROM ubuntu
+# TODO: upgrade to xenial.
+FROM ubuntu:trusty
 
 # Install node and npm latest versions.
 RUN apt-get update -qq && apt-get install -qqy software-properties-common && \
