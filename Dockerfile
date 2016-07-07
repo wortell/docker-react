@@ -2,9 +2,9 @@
 FROM ubuntu:trusty
 
 # Install node and npm latest versions.
-RUN apt-get update -qq && apt-get install -qqy software-properties-common && \
-  add-apt-repository -y ppa:chris-lea/node.js && \
-  apt-get update -qq && apt-get install -qqy nodejs libfontconfig && \
+RUN apt-get update -qq && apt-get install -qqy software-properties-common curl && \
+  curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
+  apt-get install -qqy nodejs libfontconfig && \
   npm install -g npm && \
   # Adds fs-extra to npm and replaces the fs.rename method with the fs.extra
   # move method that now automatic chooses what to do (rename/move).
