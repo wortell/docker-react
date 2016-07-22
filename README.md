@@ -23,4 +23,4 @@ Then simply rebuild your images that are based on `react-base`.
 
 ## Publishing the image
 
-The public image on https://hub.docker.com/r/bayesimpact/react-base/ gets updated automatically. You just have to edit the `Dockerfile` and push to github.
+The public image on https://hub.docker.com/r/bayesimpact/react-base/ gets updated automatically. You just have to edit the `Dockerfile` and push to github. Always have someone review your code before you push to master.
