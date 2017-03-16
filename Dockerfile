@@ -21,6 +21,8 @@ CMD ["npm", "start"]
 WORKDIR /usr/app
 
 # Install a bunch of node modules that are commonly used.
-ADD package.json server.js webpack.config.js cfg /usr/app/
+ADD package.json server.js webpack.config.js /usr/app/
 RUN npm install
 RUN rm package.json
+
+ADD cfg /usr/app/cfg
