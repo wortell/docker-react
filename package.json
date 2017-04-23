@@ -7,6 +7,7 @@
     "start": "REACT_WEBPACK_ENV=dev node server.js"
   },
   "dependencies": {
+    "airtable": "0.4.5",
     "algoliasearch": "3.14.1",
     "autocomplete.js": "0.22.1",
     "babel-core": "6.8.0",
@@ -79,6 +80,8 @@
     "redux-devtools": "3.3.1",
     "redux-devtools-dock-monitor": "1.1.1",
     "redux-devtools-log-monitor": "1.1.1",
+    "react-visibility-sensor": "3.9.0",
+    "redux-devtools-extension": "2.13.0",
     "redux-thunk": "2.1.0",
     "rimraf": "2.5.4",
     "rn-redux-mixpanel": "1.1.9",
@@ -86,6 +89,7 @@
     "style-loader": "0.13.1",
     "svgo-loader": "1.1.2",
     "underscore": "1.8.3",
+    "unused-files-webpack-plugin": "3.0.1",
     "url-loader": "0.5.7",
     "webpack": "2.2.0",
     "webpack-dev-server": "2.2.0"
