@@ -41,7 +41,7 @@ it.
 
 The actual source of the app should be mounted in `/usr/app/src`, more
 specifically the webpack entrypoint for the app is taken by default from
-`/usr/app/src/components/index.js` or `/usr/app/src/components/index.jsx`.
+`/usr/app/src/entry.js` or `/usr/app/src/entry.jsx`.
 
 
 ## Local testing

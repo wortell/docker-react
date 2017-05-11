@@ -16,7 +16,7 @@ module.exports = {
     port: port,
     publicPath: '/',
   },
-  entry: ['./src/components/index'],
+  entry: ['./src/entry'],
   module: {
     rules: [
       {
