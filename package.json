@@ -78,10 +78,11 @@
     "react-router": "4.1.2",
     "react-router-redux": "4.0.8",
     "react-tap-event-plugin": "2.0.1",
-    "redux": "3.7.2",
     "react-visibility-sensor": "3.10.1",
+    "redux": "3.7.2",
     "redux-devtools-extension": "2.13.2",
     "redux-thunk": "2.2.0",
+    "redux-raven-middleware": "1.2.0",
     "rimraf": "2.6.1",
     "rn-redux-mixpanel": "1.1.9",
     "sha1": "1.1.1",
@@ -92,6 +93,7 @@
     "unused-files-webpack-plugin": "3.0.2",
     "url-loader": "0.5.9",
     "webpack": "2.6.1",
-    "webpack-dev-server": "2.6.1"
+    "webpack-dev-server": "2.6.1",
+    "webpack-pwa-manifest": "3.2.0"
   }
 }
