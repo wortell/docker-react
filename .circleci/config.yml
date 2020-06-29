@@ -25,7 +25,6 @@ jobs:
       - run:
           name: Check that package.json is sorted.
           command: jq . package.json -S | diff - package.json
-
       - run:
           name: Check that the Dockerfile builds properly.
           command: docker build -t bayesimpact/react-base:$CIRCLE_BRANCH .
@@ -34,18 +33,40 @@ jobs:
           command: |
             docker login -u "$DOCKER_USER" -p "$DOCKER_PASSWORD"
             docker push "bayesimpact/react-base:$CIRCLE_BRANCH"
+  publish:
+    docker:
+      - image: bayesimpact/circleci
+    steps:
+      - setup_remote_docker
+      - run:
+          name: Publish docker image.
+          command: |
+            docker login -u "$DOCKER_USER" -p "$DOCKER_PASSWORD"
+            docker tag "bayesimpact/react-base:$CIRCLE_BRANCH" "bayesimpact/react-base"
+            docker push "bayesimpact/react-base"
 
 workflows:
   version: 2.1
-  commit:
+  build-test-publish:
     jobs:
       - build
       - check-dependant-repo:
+          name: check-bob
           requires:
             - build
           repo: bob-emploi-internal
       - check-dependant-repo:
+          name: check-cas-contact
           requires:
             - build
           repo: cas-contact-internal
+      - publish:
+          requires:
+            - check-bob
+            - check-cas-contact
+          filters:
+            branches:
+              only:
+                - master
+                - /.*-test-deploy/
 
