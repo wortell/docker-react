@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -qqy --no-install-recommends gconf-service
 RUN npm install puppeteer@5.3.0 && rm package-lock.json
 # Install a bunch of node modules that are commonly used.
 ADD package.json /usr/app/
+ADD tsconfig.json /usr/app/
 RUN yarn install
 
 # Add default setup files.
