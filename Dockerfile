@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -qqy --no-install-recommends gconf-service
     libappindicator1 libnss3 lsb-release xdg-utils wget libxshmfence1
 
 # TODO(cyrille): Drop this once https://github.com/puppeteer/puppeteer/issues/5835 is resolved.
-RUN npm install puppeteer@5.3.0 && rm package-lock.json
+RUN npm install puppeteer@5.3.0 openapi-typescript-codegen && rm package-lock.json
 # Install a bunch of node modules that are commonly used.
 ADD package.json /usr/app/
 ADD tsconfig.json /usr/app/
