@@ -187,7 +187,8 @@
   },
   "scripts": {
     "clean": "rimraf dist/*",
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "generateOpenApi": "openapi --input ./rest-spec/gzplein-openapi-3-spec.yaml --output ./src/.generatedOpenApi/ --exportModels true"
   },
   "version": "0.0.1"
 }

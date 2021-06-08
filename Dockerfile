@@ -15,6 +15,8 @@ RUN apt-get update && apt-get install -qqy --no-install-recommends gconf-service
 
 # TODO(cyrille): Drop this once https://github.com/puppeteer/puppeteer/issues/5835 is resolved.
 RUN npm install puppeteer@5.3.0 && rm package-lock.json
+# Install openapi package to generate typescript models globally
+RUN npm install -g openapi-typescript-codegen
 # Install a bunch of node modules that are commonly used.
 ADD package.json /usr/app/
 ADD tsconfig.json /usr/app/
