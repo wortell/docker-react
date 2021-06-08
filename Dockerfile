@@ -21,4 +21,4 @@ ADD tsconfig.json /usr/app/
 RUN yarn install
 
 # Add default setup files.
-ADD .babelrc server.js /usr/app/
+ADD .babelrc /usr/app/
