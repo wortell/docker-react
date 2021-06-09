@@ -2,7 +2,7 @@ FROM node:16.3.0
 
 EXPOSE 80
 ENV BIND_HOST=0.0.0.0
-CMD ["npm", "start"]
+CMD ["npm", "generateOpenApi", "npm", "start"]
 WORKDIR /usr/app
 
 # List of apps for Chrome install, see https://github.com/puppeteer/puppeteer/issues/290#issuecomment-322838700
