@@ -2,7 +2,7 @@ FROM node:16.3.0
 
 EXPOSE 80
 ENV BIND_HOST=0.0.0.0
-CMD ["npm", "generateOpenApi", "npm", "start"]
+CMD ["npm", "start"]
 WORKDIR /usr/app
 
 # List of apps for Chrome install, see https://github.com/puppeteer/puppeteer/issues/290#issuecomment-322838700
@@ -14,8 +14,10 @@ RUN apt-get update && apt-get install -qqy --no-install-recommends gconf-service
     libappindicator1 libnss3 lsb-release xdg-utils wget libxshmfence1
 
 # TODO(cyrille): Drop this once https://github.com/puppeteer/puppeteer/issues/5835 is resolved.
-RUN npm install puppeteer@5.3.0 openapi-typescript-codegen && rm package-lock.json
-# Install a bunch of node modules that are commonly used.
+RUN npm install puppeteer@5.3.0 && rm package-lock.json
+# Install openapi typescript model generator global
+RUN npm install -g openapi-typescript-codegen
+# Install a bunch of node modules that are commonly used
 ADD package.json /usr/app/
 ADD tsconfig.json /usr/app/
 RUN yarn install
